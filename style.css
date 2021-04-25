@@ -1,0 +1,139 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Light theme */
+.body.light {
+    --clr-bg: hsl(0, 0%, 98%);
+    --clr-bg-todo: hsl(236, 33%, 92%);
+    --clr: hsl(233, 11%, 84%);
+    --clr-clear: hsl(236, 9%, 61%);
+    --clr: hsl(235, 19%, 35%);
+}
+
+body {
+    /* Primary */
+    --clr-bright-blue: hsl(220, 98%, 61%);
+    --clr-check: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+    --clr-bg: hsl(235, 21%, 11%);
+    --clr-bg-todo: hsl(235, 24%, 19%);
+    --clr-text: hsl(234, 39%, 85%);
+    --clr-text-hover: hsl(236, 33%, 92%);
+    --clr-clear: hsl(234, 11%, 52%);
+    --clr: hsl(233, 14%, 35%);
+    --clr: hsl(237, 14%, 26%);
+
+    font-size: 18px;
+
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--clr-bg);
+    color: var(--clr-text-hover);
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    margin-top: 1rem;
+}
+
+.todo-input {
+    background-color: var(--clr-bg-todo);
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: .1rem;
+    width: 100%;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    list-style: none;
+    width: 100%;
+}
+
+.todo {
+    padding: .5rem 1rem;
+    background-color: var(--clr-bg-todo);
+    color: var(--clr-text-hover);
+    margin: .5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .5s ease;
+}
+
+.todo-item {
+    order: 1;
+    margin: 0 auto 0 .5rem;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.trash-btn {
+    order: 2;
+    color: var(--clr-clear);
+}
+
+.delete {
+    transform: translateY(50px) rotateZ(10deg);
+    opacity: 0;
+}
+
+.complete-checkbox {
+    cursor: pointer;
+}
+
+/* when I click on icon it doesn't interfere with clicking on the btn */
+.fas {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: var(--clr-clear);
+    opacity: .8;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: .5rem;
+}
+
+.filter button {
+    color: var(--clr-text-hover);
+}
+
+p {
+    font-size: 14px;
+}

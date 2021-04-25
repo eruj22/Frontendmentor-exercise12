@@ -1,8 +1,11 @@
 // Selectors
 const todoInput = document.querySelector('.todo-input');
 const todoList = document.querySelector('.todo-list');
-const filterOption = document.querySelector('.filter-todo');
+const filterOption = document.querySelector('.filter');
 const totalTasks = document.querySelector('.total-tasks span');
+const checkbox = document.querySelector('.dark-mode');
+
+const filterCompleted = document.querySelector('.filter-completed');
 
 // Event listeners
 document.getElementById('form').addEventListener('submit', addTodo);
@@ -43,7 +46,7 @@ function addTodo(e) {
     // clear to-do input value
     todoInput.value = '';
 
-
+    countTodos();
 }
 
 function deleteCheck(e) {
@@ -56,7 +59,10 @@ function deleteCheck(e) {
         todo.addEventListener('transitionend', () => {
             todo.remove();
         })
+        deleteTodos();
     }
+
+
 
     // check mark
     if (item.classList[0] === 'complete-checkbox') {
@@ -77,7 +83,7 @@ function filterTodo(e) {
                 todo.style.display = 'flex';
             }
         })
-        document.querySelector('.filter-completed').addEventListener('click', function() {
+        filterCompleted.addEventListener('click', function() {
             if (todo.classList.contains('completed')) {
                 todo.style.display = 'flex';
             } else {
@@ -95,14 +101,19 @@ function filterTodo(e) {
     });
 }
 
-// poglej kaj je narobe, ko brisem mi ne kaze pravilno
-// show how many todos are saved
+// number of added todos
 function countTodos() {
     let len = document.querySelectorAll('.todo-list li').length;
     totalTasks.innerHTML = len;
 }
 
-// save local todos
-function saveLocalTodos(todo) {
-
+// number of deleted todos
+function deleteTodos() {
+    let len = document.querySelectorAll('.todo-list li').length - 1;
+    totalTasks.innerHTML = len;
 }
+
+// save local todos
+// function saveLocalTodos(todo) {
+
+// }

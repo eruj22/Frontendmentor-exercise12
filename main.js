@@ -117,3 +117,21 @@ function deleteTodos() {
 // function saveLocalTodos(todo) {
 
 // }
+
+
+// Toggle light and dark mode
+const toggleColorMode = e => {
+    if (e.currentTarget.classList.contains('light-hidden')) {
+        document.documentElement.setAttribute('color-mode', 'light');
+        return;
+    }
+
+    document.documentElement.setAttribute('color-mode', 'dark');
+
+};
+
+const toggleColorBtns = document.querySelectorAll('.color-mode-btn');
+
+toggleColorBtns.forEach(btn => {
+    btn.addEventListener('click', toggleColorMode);
+});

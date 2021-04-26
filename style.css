@@ -1,3 +1,34 @@
+:root[color-mode='dark'] {
+    --clr-bg: hsl(235, 21%, 11%);
+    --clr-bg-todo: hsl(235, 24%, 19%);
+    --clr-text: hsl(234, 39%, 85%);
+    --clr-text-hover: hsl(236, 33%, 92%);
+    --clr-clear: hsl(234, 11%, 52%);
+    --clr-border: hsl(233, 14%, 35%);
+    --clr: hsl(237, 14%, 26%);
+    --bg-image: url(images/bg-desktop-dark.jpg);
+    --clr-h1: hsl(236, 33%, 92%);
+}
+
+:root[color-mode='light'] {
+    --clr-bg-todo: hsl(0, 0%, 98%);
+    --clr-bg: hsl(236, 33%, 92%);
+    --clr-border: hsl(233, 11%, 84%);
+    --clr-clear: hsl(236, 9%, 61%);
+    --clr: hsl(235, 19%, 35%);
+    --clr-text: #333;
+    --bg-image: url(images/bg-desktop-light.jpg);
+    --clr-h1: hsl(236, 33%, 92%);
+}
+
+:root[color-mode='light'] .light-hidden {
+    display: none;
+}
+
+:root[color-mode='dark'] .dark-hidden {
+    display: none;
+}
+
 *,
 ::before,
 ::after {
@@ -6,46 +37,36 @@
     box-sizing: border-box;
 }
 
-/* Light theme */
-body.light {
-    --clr-bg-todo: hsl(0, 0%, 98%);
-    --clr-bg: hsl(236, 33%, 92%);
-    --clr: hsl(233, 11%, 84%);
-    --clr-clear: hsl(236, 9%, 61%);
-    --clr: hsl(235, 19%, 35%);
-    --clr-text: #333;
-}
-
 body {
     /* Primary */
     --clr-bright-blue: hsl(220, 98%, 61%);
     --clr-check: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-
-    --clr-bg: hsl(235, 21%, 11%);
-    --clr-bg-todo: hsl(235, 24%, 19%);
-    --clr-text: hsl(234, 39%, 85%);
-    --clr-text-hover: hsl(236, 33%, 92%);
-    --clr-clear: hsl(234, 11%, 52%);
-    --clr: hsl(233, 14%, 35%);
-    --clr: hsl(237, 14%, 26%);
 
     font-size: 18px;
 
     font-family: 'Josefin Sans', sans-serif;
     background-color: var(--clr-bg);
     color: var(--clr-text);
+
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
 }
 
 .container {
     width: 90%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     margin-top: 10vh;
+}
+
+.color-mode-btn {
+    color: var(--clr-h1);
 }
 
 h1 {
     text-transform: uppercase;
     font-weight: normal;
+    color: var(--clr-h1);
 }
 
 .header {
@@ -56,16 +77,18 @@ h1 {
 }
 
 form {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .todo-input {
     background-color: var(--clr-bg-todo);
     border: none;
-    padding: .5rem 1rem;
+    padding: .8rem 1rem;
     border-radius: .1rem;
     width: 100%;
     color: var(--clr-text);
+    border-radius: .3rem;
+    font-size: 18px;
 }
 
 .todo-container {
@@ -90,12 +113,13 @@ form {
 }
 
 .todo + .todo {
-    border-top: 1px solid var(--clr-clear);
+    border-top: 1px solid var(--clr-border);
 }
 
 .todo-item {
     order: 1;
     margin: 0 auto 0 .5rem;
+    cursor: pointer;
 }
 
 button {
@@ -107,7 +131,7 @@ button {
 
 .trash-btn {
     order: 2;
-    color: var(--clr-clear);
+    color: var(--clr-border);
 }
 
 .delete {
@@ -118,7 +142,7 @@ button {
 .complete-checkbox {
     cursor: pointer;
     -webkit-appearance: none;
-    border: 1px solid var(--clr-clear);
+    border: 1px solid var(--clr-border);
     height: 1rem;
     width: 1rem;
     border-radius: 50%;
@@ -140,16 +164,15 @@ button {
 .completed {
     text-decoration: line-through;
     color: var(--clr-clear);
-    opacity: .8;
 }
 
 .filter {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: .5rem;
+    padding: .7rem 1rem;
     background-color: var(--clr-bg-todo);
-    border-top: 1px solid var(--clr-clear);
+    border-top: 1px solid var(--clr-border);
 }
 
 .filter-todo button {

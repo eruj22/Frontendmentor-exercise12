@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" color-mode="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
@@ -18,8 +18,12 @@
   <div class="container">
     <header class="header">
       <h1>Todo</h1>
-      <i class="fas fa-sun"></i>
-      <!-- <i class="fas fa-moon"></i> -->
+      <button class="color-mode-btn light-hidden">
+        <i aria-hidden="true" class="fas fa-sun"></i>
+      </button>
+      <button class="color-mode-btn dark-hidden">
+        <i aria-hidden="true" class="fas fa-moon"></i>
+      </button>
     </header>
     <form id="form">
       <input type="text" class="todo-input">

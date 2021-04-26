@@ -6,6 +6,10 @@ const totalTasks = document.querySelector('.total-tasks span');
 const checkbox = document.querySelector('.dark-mode');
 
 const filterCompleted = document.querySelector('.filter-completed');
+const filterActive = document.querySelector('.filter-active');
+const filterClear = document.querySelector('.filter-clear');
+const filterAll = document.querySelector('.filter-all');
+
 
 // Event listeners
 document.getElementById('form').addEventListener('submit', addTodo);
@@ -27,7 +31,7 @@ function addTodo(e) {
     newTodo.classList.add('todo-item');
     // sticking li into the div
     todoDiv.appendChild(newTodo);
-
+    
     // check mark checkbox
     const completedCheckbox = document.createElement('input');
     completedCheckbox.type = 'checkbox';
@@ -76,7 +80,7 @@ function deleteCheck(e) {
 function filterTodo(e) {
     const todos = todoList.childNodes;
     todos.forEach(function(todo) {
-        document.querySelector('.filter-active').addEventListener('click', function() {
+        filterActive.addEventListener('click', function() {
             if (todo.classList.contains('completed')) {
                 todo.style.display = 'none';
             } else {
@@ -90,14 +94,15 @@ function filterTodo(e) {
                 todo.style.display = 'none';
             }
         })
-        document.querySelector('.filter-clear').addEventListener('click', function() {
+        filterClear.addEventListener('click', function() {
             if (todo.classList.contains('completed')) {
                 todo.remove();
             }
         })
-        document.querySelector('.filter-all').addEventListener('click', function() {
+        filterAll.addEventListener('click', function() {
             todo.style.display = 'flex';
         })
+
     });
 }
 
@@ -112,12 +117,6 @@ function deleteTodos() {
     let len = document.querySelectorAll('.todo-list li').length - 1;
     totalTasks.innerHTML = len;
 }
-
-// save local todos
-// function saveLocalTodos(todo) {
-
-// }
-
 
 // Toggle light and dark mode
 const toggleColorMode = e => {

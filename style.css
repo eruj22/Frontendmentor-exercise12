@@ -119,7 +119,6 @@ form {
 .todo-item {
     order: 1;
     margin: 0 auto 0 .5rem;
-    cursor: pointer;
 }
 
 button {
@@ -188,5 +187,3 @@ p {
     font-size: 14px;
     color: var(--clr-clear);
 }
-
-/* Dark mode */

@@ -53,6 +53,7 @@ body {
     background-image: var(--bg-image);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: 50% 0;
 }
 
 @media only screen and (max-width: 800px) {

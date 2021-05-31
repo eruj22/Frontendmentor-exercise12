@@ -1,5 +1,8 @@
 # Frontend Mentor - Todo app
 
+This was interesting little project. This was my first time building this app so I followed instructions for the logic on YouTube. For me it was challenging to set it up. I had different final design as the instructor's project, so I had to add some things by my own. Filtering and showing the number of to-dos took some thought and testing, but I made it work. <br>
+You can veiw <a href="https://adoring-sammet-e8f716.netlify.app/">site live here</a>.
+
 ![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
